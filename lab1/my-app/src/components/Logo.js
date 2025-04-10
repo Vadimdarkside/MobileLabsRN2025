@@ -7,7 +7,7 @@ const Logo = () => {
         <Image source={require('../../assets/7.jpg')} style={{width:120, height:120}}></Image>
       </View>
       <View style={styles.containerLogoText}>
-        <Text style={styles.logoText}>BondarApp</Text>
+        <Text style={styles.logoText}>BondarsApp</Text>
       </View>
     </View>
   )
