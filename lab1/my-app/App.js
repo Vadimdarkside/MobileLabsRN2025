@@ -20,6 +20,7 @@ export default function App() {
           <Tab.Screen name='Profile' component={ProfileScreen}></Tab.Screen>
         </Tab.Navigator>
       </NavigationContainer>
+      <View style={{alignItems:"center"}}><Text>Бондар Вадим ІПЗ-21-2</Text></View>
     </>
   );
 }

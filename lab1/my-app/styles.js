@@ -19,7 +19,11 @@ const styles = StyleSheet.create(
             textShadowColor: 'rgba(0, 0, 0, 0.2)',
             textShadowOffset: { width: 2, height: 2 },
             textShadowRadius: 2,
-          }
+          },
+        bigText:{
+            fontSize: 30,
+            fontWeight: "bold",
+        }
     }
 );
 export default styles;

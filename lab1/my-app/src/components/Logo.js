@@ -4,7 +4,7 @@ const Logo = () => {
   return (
     <View style={styles.containerLogo}>
       <View>
-        <Image source={require('../../assets/7.jpg')} style={{width:120, height:120}}></Image>
+        <Image source={require('../../assets/7.jpg')} style={{width:100, height:100}}></Image>
       </View>
       <View style={styles.containerLogoText}>
         <Text style={styles.logoText}>BondarsApp</Text>
