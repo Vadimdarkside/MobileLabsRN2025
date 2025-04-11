@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { Button } from "react-native-web";
 const styles = StyleSheet.create(
     {
         containerLogo: {
@@ -38,7 +39,28 @@ const styles = StyleSheet.create(
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 8,
-        }
+        },
+        input:{
+            marginHorizontal:10,
+            borderColor:"gray",
+            borderWidth:1,
+            paddingHorizontal:10,
+        },
+        button:{
+            alignItems:"center",
+            backgroundColor:"#3498db",
+            paddingVertical:12,
+            paddingHorizontal:20,
+            borderRadius:8,
+        },
+        buttonPressed:{
+            backgroundColor:"blue",
+        },
+        buttonText:{
+            color:"#fff",
+            fontSize:18,
+            fontWeight:"bold",
+        }      
     }
 );
 export default styles;
