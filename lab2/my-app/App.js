@@ -10,10 +10,22 @@ import Profile from "./src/screens/Profile"
 import Store from './src/screens/Store';
 import { useState } from 'react';
 
-
+{/* <ThemeProvider theme={themes[theme]}></ThemeProvider>
+const [theme, setTheme] = useState("dark");
+const themes = {
+  dark:{
+    colorBg:"#1C202C",
+    colorTab: "#12141C",
+    barStyleProp:"light-content",
+  },
+  light:{
+    colorBg:"#fff",
+    colorTab: "#fff",
+    barStyleProp:"dark-content",
+  }
+} */}
 
 const Icon = styled(Image)`
-
   margin-top: 20px;
   width: 35px;
   height: 35px;
