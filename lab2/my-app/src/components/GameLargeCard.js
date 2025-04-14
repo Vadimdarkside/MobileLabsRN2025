@@ -3,11 +3,10 @@ import styled from "styled-components";
 
 
 
-const GameCard = styled.View`
-margin-top: 20px;
+const GameCardContainer = styled.View`
 border-radius: 20px;
  position: relative;
- width: 100%;
+ width: 350px;
  height: 300px;
  overflow: hidden;
 `;
@@ -68,12 +67,12 @@ right: 4%;
 `;
 
 
-const GameCardContainer = ({name,...props}) => {
+const GameCard = ({title,...props}) => {
   return (
-    <GameCard>
+    <GameCardContainer>
         <GameCardImage source={require('../../assets/game1.png')}/>
         <GameCardTextContainer>
-          <GameCardTextH1>{name}</GameCardTextH1>  
+          <GameCardTextH1>{title}</GameCardTextH1>  
           <GameCardTextP>Recommended by your friend Player</GameCardTextP>  
           <CardDiscountContainer>
               <DiscountTextGreen>-70%</DiscountTextGreen>
@@ -82,8 +81,8 @@ const GameCardContainer = ({name,...props}) => {
           </CardDiscountContainer>
         </GameCardTextContainer>
         <WindowsLogo source={require('../../assets/windowso.png')}/>
-      </GameCard>
+      </GameCardContainer>
   )
 }
 
-export default GameCardContainer
+export default GameCard

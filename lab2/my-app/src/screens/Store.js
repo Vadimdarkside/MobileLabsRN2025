@@ -1,14 +1,16 @@
 import { View, Text, Image } from "react-native"
 import ScreenWrapper from "../components/ScreenWrapper";
 import styled from "styled-components";
-import GameCardContainer from "../components/GameCardContainer";
+import GameLargeCardCarousel from "../components/GameLargeCardCarousel";
 import HeaderContainer from "../components/HeaderContainer";
+import ButtonsContainer from "../components/ButtonsContainer";
 
 const Store = () => {
   return (
     <ScreenWrapper color="#1C202C">
       <HeaderContainer searchIcon title="Store"></HeaderContainer>
-      <GameCardContainer name="Dead by Daylight"></GameCardContainer>
+      <GameLargeCardCarousel/>
+      <ButtonsContainer></ButtonsContainer>
     </ScreenWrapper>
   )
 }
