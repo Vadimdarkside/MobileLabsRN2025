@@ -11,7 +11,7 @@ const ListData = [
 
 const GameLargeCardCarousel = () => {
   return (
-    <FlatListContainer data={ListData} isHorizontal 
+    <FlatListContainer data={ListData} isHorizontal scrollEnd={true}
     renderItem={({ item }) => <GameLargeCard title={item.title}></GameLargeCard>}
     >
     </FlatListContainer>

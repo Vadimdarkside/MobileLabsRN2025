@@ -19,7 +19,7 @@ const ListData = [
 
 const GameMiniCardList = () => {
   return (
-    <FlatListContainer data={ListData} 
+    <FlatListContainer data={ListData} height="365" scrollEnd={true}
     renderItem={({ item }) => <GameMiniCard data={item}></GameMiniCard>}
     >
     </FlatListContainer>
