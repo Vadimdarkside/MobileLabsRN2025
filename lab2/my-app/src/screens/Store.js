@@ -4,6 +4,7 @@ import styled from "styled-components";
 import GameLargeCardCarousel from "../components/GameLargeCardCarousel";
 import HeaderContainer from "../components/HeaderContainer";
 import ButtonsContainer from "../components/ButtonsContainer";
+import GameMiniCardList from "../components/GameMiniCardList";
 
 const Store = () => {
   return (
@@ -11,6 +12,7 @@ const Store = () => {
       <HeaderContainer searchIcon title="Store"></HeaderContainer>
       <GameLargeCardCarousel/>
       <ButtonsContainer></ButtonsContainer>
+      <GameMiniCardList></GameMiniCardList>
     </ScreenWrapper>
   )
 }

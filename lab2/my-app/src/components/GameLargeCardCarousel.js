@@ -1,6 +1,7 @@
 import { View, Text, Image, FlatList } from "react-native"
 import styled from "styled-components";
 import GameLargeCard from "./GameLargeCard"
+import FlatListContainer from "./FlatListContainer";
 
 const ListData = [
   {id:1, title:"Dead by Daylight"},
@@ -8,25 +9,12 @@ const ListData = [
   {id:3, title:"GTA 6"},
 ]
 
-const List = styled(FlatList)`
-max-height:300px; 
-`;
-
-
-const GameLargeCardCarousel = ({...props}) => {
+const GameLargeCardCarousel = () => {
   return (
-    <List
-        data={ListData}
-        horizontal={true}
-        keyExtractor={(item)=>item.id}
-        contentContainerStyle={{alignItems:'center', justifyContent:"center"}}
-        ItemSeparatorComponent={() => <View style={{ width: 10 }} />}
-        showsHorizontalScrollIndicator={false}
-        renderItem={({item})=>(
-            <GameLargeCard title={item.title}></GameLargeCard>
-        )}>
-
-        </List>
+    <FlatListContainer data={ListData} isHorizontal 
+    renderItem={({ item }) => <GameLargeCard title={item.title}></GameLargeCard>}
+    >
+    </FlatListContainer>
   )
 }
 

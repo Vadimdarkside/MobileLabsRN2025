@@ -67,7 +67,7 @@ right: 4%;
 `;
 
 
-const GameCard = ({title,...props}) => {
+const GameLargeCard = ({title,...props}) => {
   return (
     <GameCardContainer>
         <GameCardImage source={require('../../assets/game1.png')}/>
@@ -85,4 +85,4 @@ const GameCard = ({title,...props}) => {
   )
 }
 
-export default GameCard
+export default GameLargeCard

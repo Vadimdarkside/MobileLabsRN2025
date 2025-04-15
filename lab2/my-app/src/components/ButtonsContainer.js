@@ -11,16 +11,9 @@ const buttonsObj = [
     {id:4,title:"Discounts"},
 ]
 
-const List = styled(FlatList)`
-margin-top:5px;
-/* background-color:red; */
-padding: 5px;
-max-height: 50px;
-`;
-
 const ButtonsContainer = () => {
   return (<>
-        <FlatListContainer isHorizontal margintop="25px" data={buttonsObj}
+        <FlatListContainer isHorizontal margintop="20" data={buttonsObj}
         renderItem={({ item }) => <Button data={item} />}
         >
         </FlatListContainer>

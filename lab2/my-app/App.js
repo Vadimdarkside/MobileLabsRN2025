@@ -26,9 +26,9 @@ const themes = {
 } */}
 
 const Icon = styled(Image)`
-  margin-top: 20px;
-  width: 35px;
-  height: 35px;
+  margin-top: 20;
+  width: 35;
+  height: 35;
   object-fit: center;
   ${(props)=>props.isProfile && "border-radius: 50px;"}
 `;
