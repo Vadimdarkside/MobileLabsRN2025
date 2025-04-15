@@ -13,10 +13,16 @@ color: white;
 font-size: 16px;
 `;
 
-const Button = ({data,...props}) => {
+const StyledImage = styled.Image`
+width: 25px;
+height: 25px;
+`;
+
+const Button = ({data,imgButton, imgPath,...props}) => {
   return (
-   <StyledButton selected={data.id==1?true:false}>
-        <StyledText>{data.title}</StyledText>
+    <StyledButton {...props} selected={!imgButton && data.id === 1}>
+        {imgButton?<StyledImage source={imgPath}></StyledImage>:null}
+        {!imgButton&&<StyledText>{data.title}</StyledText>}
    </StyledButton>
   )
 }
