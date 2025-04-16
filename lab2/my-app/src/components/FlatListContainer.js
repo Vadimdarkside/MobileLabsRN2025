@@ -43,7 +43,7 @@ const FlatListContainer = ({data,isHorizontal,scrollEnd=false,...props}) => {
         data={itemsData}
         horizontal={isHorizontal?true:false}
         keyExtractor={(item)=>item.id}
-        contentContainerStyle={{alignItems:'center', justifyContent:"center"}}
+        // contentContainerStyle={{alignItems:'center', justifyContent:"center"}}
         ItemSeparatorComponent={() => <View style={{ width: 8 }} />}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}

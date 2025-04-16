@@ -145,16 +145,3 @@ const CommunityCard = () => {
 }
 
 export default CommunityCard
-
-
-{/* <GameCardImage source={require('../../assets/game1.png')}/>
-<GameCardTextContainer>
-  <GameCardTextH1>{title}</GameCardTextH1>  
-  <GameCardTextP>Recommended by your friend Player</GameCardTextP>  
-  <CardDiscountContainer>
-      <DiscountTextGreen>-70%</DiscountTextGreen>
-      <DiscountTextCrossed>$18%</DiscountTextCrossed>
-      <DiscountText>$5</DiscountText>
-  </CardDiscountContainer>
-</GameCardTextContainer>
-<WindowsLogo source={require('../../assets/windowso.png')}/> */}

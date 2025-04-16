@@ -37,7 +37,7 @@ const HeaderContainer = ({searchIcon, title}) => {
             <HeaderText>{title}</HeaderText>
           </LogoView>
           {searchIcon && <SearchIcon source={require('../../assets/search.png')}/>}
-      </Header>
+    </Header>
   )
 }
 
