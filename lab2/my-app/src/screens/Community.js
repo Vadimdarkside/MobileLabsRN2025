@@ -1,7 +1,7 @@
 import { View, Text } from "react-native"
 import ScreenWrapper from "../components/ScreenWrapper"
 import HeaderContainer from "../components/HeaderContainer"
-import styled from "styled-components"
+import styled,{useTheme} from "styled-components"
 import ButtonsContainer from "../components/ButtonsContainer";
 import CommunityCard from "../components/CommunityCard";
 
@@ -18,19 +18,20 @@ color:#7B8D9D;
 `;
 
 const Community = () => {
+  const theme = useTheme();
   return (
     <>
-      <ScreenWrapper color="#1C202C">
+      <ScreenWrapper color={theme.colorBg}>
         <HeaderContainer title="Community"></HeaderContainer>
         <HeaderText>Community and official content for all games and software</HeaderText>
         <ButtonsContainer isSearchButton={true} data={buttonsObj}></ButtonsContainer>
       </ScreenWrapper>
-      <ScreenWrapper padding="4px" color="#171A24"></ScreenWrapper>
-      <ScreenWrapper color="#1C202C">
+      <ScreenWrapper padding="4px" color={theme.colorButton}></ScreenWrapper>
+      <ScreenWrapper color={theme.colorBg}>
         <CommunityCard></CommunityCard>
       </ScreenWrapper>
-      <ScreenWrapper padding="4px" color="#171A24"></ScreenWrapper>
-      <ScreenWrapper color="#1C202C">
+      <ScreenWrapper padding="4px" color={theme.colorButton}></ScreenWrapper>
+      <ScreenWrapper color={theme.colorBg}>
         <CommunityCard></CommunityCard>
       </ScreenWrapper>
     </>

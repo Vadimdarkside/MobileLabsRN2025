@@ -26,9 +26,9 @@ width: 25px;
 height: 25px;
 `;
 
-const FunctionalButton = ({title,...props}) => {
+const FunctionalButton = ({title,onPress,...props}) => {
   return (
-    <Button {...props}>
+    <Button onPress={onPress} {...props}>
         <StyledText>{title}</StyledText>
         <Arrow source={require("../../assets/next.png")}></Arrow>
    </Button>

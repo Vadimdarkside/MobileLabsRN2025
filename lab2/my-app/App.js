@@ -10,49 +10,57 @@ import Profile from "./src/screens/Profile"
 import Store from './src/screens/Store';
 import { useState } from 'react';
 
-{/* <ThemeProvider theme={themes[theme]}></ThemeProvider>
-const [theme, setTheme] = useState("dark");
 const themes = {
   dark:{
+    name:"dark",
     colorBg:"#1C202C",
     colorTab: "#12141C",
     barStyleProp:"light-content",
+    colorMainText:"white",
+    colorButton:"#303649",
   },
   light:{
+    name:"light",
     colorBg:"#fff",
     colorTab: "#fff",
     barStyleProp:"dark-content",
+    colorMainText:"black",
+    colorButton:"#D0D0D0",
   }
-} */}
-
-const Icon = styled(Image)`
-  margin-top: 20;
-  width: 35;
-  height: 35;
-  object-fit: center;
-  ${(props)=>props.isProfile && "border-radius: 50px;"}
-`;
+} 
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
+  const [theme, setTheme] = useState("dark");
+
+  const toggleTheme =()=>{
+    setTheme((prev)=>prev==="dark"?"light":"dark")
+  }
 
   return (
     <>
-      <StatusBar backgroundColor="#1C202C" barStyle='light-content'></StatusBar>
+    <ThemeProvider theme={themes[theme]}>
+      <StatusBar backgroundColor={themes[theme].colorBg} barStyle={themes[theme].barStyleProp}></StatusBar>
       <NavigationContainer>
         <Tab.Navigator screenOptions={
           ({route})=>({
             tabBarShowLabel: false,
             headerShown: false,
-            tabBarActiveTintColor:"white",
+            tabBarActiveTintColor:themes[theme].colorMainText,
             tabBarInactiveTintColor:"#4B5664",
-            tabBarStyle:{backgroundColor: "#12141C", height:60},
+            tabBarStyle:{backgroundColor: themes[theme].colorTab, height:60},
             tabBarIcon:({focused})=>{
               let icon;
               let isProfile;
               if(route.name == 'store')
-                icon = focused ? require("./assets/shopping-bag-light.png") : require("./assets/shopping-bag-dark.png")
+              {
+                if(focused && theme == "dark")
+                  icon = require("./assets/shopping-bag-light.png");
+                else icon = require("./assets/shopping-bag-dark.png");
+                if(focused && theme == "light")
+                  icon = require("./assets/shopping-bag-dark.png");
+              }
               else if(route.name == 'community')
                 icon = focused ? require("./assets/user-light.png") : require("./assets/user-dark.png")
               else if(route.name == 'chat')
@@ -73,12 +81,22 @@ export default function App() {
           <Tab.Screen name='community' component={Community}></Tab.Screen>
           <Tab.Screen name='chat' component={Chat}></Tab.Screen>
           <Tab.Screen name='safety' component={Safety}></Tab.Screen>
-          <Tab.Screen name='profile' component={Profile}></Tab.Screen>
+          <Tab.Screen name='profile' children={() => 
+            <Profile toggleTheme={toggleTheme} theme={themes[theme]} />}>
+          </Tab.Screen>
         </Tab.Navigator>
       </NavigationContainer>
+    </ThemeProvider>
     </>
    
   );
 }
 
 
+const Icon = styled(Image)`
+  margin-top: 20;
+  width: 35;
+  height: 35;
+  object-fit: center;
+  ${(props)=>props.isProfile && "border-radius: 50px;"}
+`;

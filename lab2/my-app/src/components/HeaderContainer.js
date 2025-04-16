@@ -1,6 +1,6 @@
 
 import { View, Text, Image } from "react-native"
-import styled from "styled-components";
+import styled, {useTheme} from "styled-components";
 
 const Header = styled.View`
 flex-direction: row;
@@ -10,7 +10,7 @@ padding: 10px;
 `;
 
 const HeaderText = styled.Text`
-color: white;
+color: ${(props)=>(props.theme.colorMainText)};
 font-size: 28px;
 `;
 
@@ -30,10 +30,13 @@ height: 38px;
 `;
 
 const HeaderContainer = ({searchIcon, title}) => {
+  const theme = useTheme();
   return (
     <Header>
           <LogoView >
-            <LogoIcon source={require('../../assets/steam.png')} />
+            {theme.name=="dark"?
+            <LogoIcon source={require('../../assets/steam.png')} />:
+            <LogoIcon source={require('../../assets/social.png')} />}
             <HeaderText>{title}</HeaderText>
           </LogoView>
           {searchIcon && <SearchIcon source={require('../../assets/search.png')}/>}

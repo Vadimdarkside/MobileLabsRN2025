@@ -5,6 +5,7 @@ import GameLargeCardCarousel from "../components/GameLargeCardCarousel";
 import HeaderContainer from "../components/HeaderContainer";
 import ButtonsContainer from "../components/ButtonsContainer";
 import GameMiniCardList from "../components/GameMiniCardList";
+import { useTheme } from "styled-components";
 
 const buttonsObj = [
     {id:1,title:"Top Sellers"},
@@ -14,8 +15,10 @@ const buttonsObj = [
 ]
 
 const Store = () => {
+const theme = useTheme();
+
   return (
-    <ScreenWrapper color="#1C202C">
+    <ScreenWrapper color={theme.colorBg}>
       <HeaderContainer searchIcon title="Store"></HeaderContainer>
       <GameLargeCardCarousel/>
       <ButtonsContainer data={buttonsObj}></ButtonsContainer>

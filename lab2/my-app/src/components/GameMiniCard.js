@@ -7,6 +7,7 @@ const GameCardContainer = styled.View`
 margin-top: 15px;
 flex-direction: row;
 width: 100%;
+background-color: ${(props)=>(props.theme.name == "light"?props.theme.colorButton:null)}
 `;
 
 const GameCardImage = styled(Image)`

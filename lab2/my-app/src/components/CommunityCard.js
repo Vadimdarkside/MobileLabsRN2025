@@ -24,17 +24,17 @@ flex:1;
 
 const TextProfileName= styled.Text`
 font-size: 18px;
-color: white;
+color: ${(props)=>(props.theme.colorMainText)};
 `;
 
 const TextTime = styled.Text`
 font-size: 13px;
 opacity: 0.6;
-color: white;
+color: ${(props)=>(props.theme.colorMainText)};
 `;
 const Dots = styled.Text`
 font-size: 26px;
-color: white;
+color: ${(props)=>(props.theme.colorMainText)};
 opacity: 0.7;
 flex: 1;
 text-align: center;
@@ -51,7 +51,7 @@ font-size: 10px;
 padding: 2px;
 border-radius: 5px;
 background-color:#B63DB6;
-color: white;
+color: ${(props)=>(props.theme.colorMainText)};
 `;
 
 const HeaderContainer = styled.View`
@@ -69,13 +69,13 @@ border-radius: 10px;
 const TextNewsTitle = styled(TextProfileName)`
 margin-top: 10px;
 font-size: 18px;
-color: white;
+color: ${(props)=>(props.theme.colorMainText)};
 `;
 
 const TextNews = styled(TextProfileName)`
 margin-top: 10px;
 font-size: 16px;
-color: white;
+color: ${(props)=>(props.theme.colorMainText)};
 opacity: 0.8;
 margin-bottom: 10px;
 `;
