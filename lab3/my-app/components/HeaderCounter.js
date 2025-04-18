@@ -1,7 +1,7 @@
 import { View, Text,Button } from "react-native"
 import styled from "styled-components"
 
-const HeaderCounter = () => {
+const HeaderCounter = ({score}) => {
   return (
     <Box>
         <MainImage source={require("../assets/pes.jpg")}></MainImage>
@@ -10,10 +10,10 @@ const HeaderCounter = () => {
                 <LabelText>Рахунок:</LabelText>
             </ViewRowLeft>
             <ViewRowRight>
-                <ScoreText>937440</ScoreText>
+                <ScoreText>{score}</ScoreText>
             </ViewRowRight>
             <ViewRowRight>
-                <LabelTextMini>Мертвої русні</LabelTextMini>
+                <LabelTextMini>Dead русні</LabelTextMini>
             </ViewRowRight>
         </View>
     </Box>

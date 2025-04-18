@@ -14,7 +14,7 @@ import {
 } from "react-native-gesture-handler";
 
 const Game = () => {
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(937440);
   const [scale] = useState(new Animated.Value(1));
   const [pan] = useState(new Animated.ValueXY());
   const doubleTapRef = useRef(null);
