@@ -6,26 +6,29 @@ import Game from './Screens/Game';
 import Statistic from './Screens/Statistic';
 import styled from 'styled-components';
 import SettingsButton from './components/SettingsButton';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name='Game' component={Game}
-        options={{
-          title:"ПотужноМетр",
-          headerRight:()=>(<SettingsButton title="headerRight"/>)
-        }}
-        ></Stack.Screen>
-        <Stack.Screen name='Statistic' component={Statistic}
-        options={{
-          gestureEnabled:false,
-        }}
-        ></Stack.Screen>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <GestureHandlerRootView>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name='Game' component={Game}
+          options={{
+            title:"ПотужноМетр",
+            headerRight:()=>(<SettingsButton title="headerRight"/>)
+          }}
+          ></Stack.Screen>
+          <Stack.Screen name='Statistic' component={Statistic}
+          options={{
+            gestureEnabled:false,
+          }}
+          ></Stack.Screen>
+        </Stack.Navigator>
+      </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }
 
