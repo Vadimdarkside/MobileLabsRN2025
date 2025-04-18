@@ -13,7 +13,7 @@ import {
   State,
 } from "react-native-gesture-handler";
 
-const Game = () => {
+const Game = ({onTaskProgress}) => {
   const [score, setScore] = useState(937440);
   const [scale] = useState(new Animated.Value(1));
   const [pan] = useState(new Animated.ValueXY());
@@ -22,35 +22,57 @@ const Game = () => {
   const flingLeftRef = useRef(null);
   const flingRightRef = useRef(null);
   const panRef = useRef(null);
+  
 
+  
   const addPoints = (points) => setScore((prev) => prev + points);
 
   const handleSingleTap = () => {
     addPoints(1);
+    onTaskProgress("1",1);
+    onTaskProgress("8",1);
   };
 
   const handleDoubleTap = () => {
     addPoints(2);
+    onTaskProgress("2",1);
+    onTaskProgress("8",1);
+
   };
 
   const handleLongPress = () => {
     addPoints(5);
+    onTaskProgress("3",5);
+    onTaskProgress("8",5);
   };
 
   const handleFling = (direction) => {
     const randomPoints = Math.floor(Math.random() * 10) + 1;
     addPoints(randomPoints);
+    direction==="вправо"&&onTaskProgress('5',randomPoints);
+    direction==="вліво"&&onTaskProgress('6',randomPoints);
+    onTaskProgress('8',randomPoints);
     Alert.alert("Свайп!", `Свайп ${direction}, очки: +${randomPoints}`);
   };
 
   const handlePinch = Animated.event(
     [{ nativeEvent: { scale: scale } }],
-    { useNativeDriver: false }
+    { useNativeDriver: false,
+      listener: () => {
+        onTaskProgress('7',3);
+        onTaskProgress('8',3);
+      },
+     }
   );
 
   const handlePan = Animated.event(
     [{ nativeEvent: { translationX: pan.x, translationY: pan.y } }],
-    { useNativeDriver: false }
+    { useNativeDriver: false,
+      listener: () => {
+        onTaskProgress('4',3);
+        onTaskProgress('8',3);
+      },
+     }
   );
 
   return (
@@ -79,7 +101,7 @@ const Game = () => {
               >
                 <LongPressGestureHandler
                   onActivated={handleLongPress}
-                  minDurationMs={800}
+                  minDurationMs={3000}
                 >
                   <TapGestureHandler
                     waitFor={doubleTapRef}

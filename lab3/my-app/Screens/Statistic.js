@@ -1,23 +1,11 @@
 import React, { useState } from "react";
 import { View, Text, FlatList, StyleSheet } from "react-native";
 
-const initialTasks = [
-  { id: '1', text: "Зробити 10 кліків", completed: false },
-  { id: '2', text: "Зробити подвійний клік 5 разів", completed: false },
-  { id: '3', text: "Утримувати об'єкт 3 секунди", completed: false },
-  { id: '4', text: "Перетягнути об'єкт", completed: false },
-  { id: '5', text: "Зробити свайп вправо", completed: false },
-  { id: '6', text: "Зробити свайп вліво", completed: false },
-  { id: '7', text: "Змінити розмір об'єкта", completed: false },
-  { id: '8', text: "Отримати 100 очок", completed: false },
-];
-
-const Statistic = () => {
-  const [tasks, setTasks] = useState(initialTasks);
+const Statistic = ({tasksProgressList}) => {
 
   const renderItem = ({ item }) => (
     <View style={[styles.taskItem, item.completed && styles.completed]}>
-      <Text style={styles.taskText}>{item.text}</Text>
+      <Text style={styles.taskText}>{item.text} - {item.count}/{item.need}</Text>
     </View>
   );
 
@@ -25,7 +13,7 @@ const Statistic = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Завдання</Text>
       <FlatList
-        data={tasks}
+        data={tasksProgressList}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
       />
